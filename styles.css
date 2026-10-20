@@ -1,0 +1,74 @@
+/* ===== Variables de color ===== */
+:root {
+  --morado-oscuro: #4a3560;
+  --morado-medio: #7a5a9e;
+  --morado-pie: #9b7bbf;
+  --lila-claro: #f3e6fb;
+  --blanco: #ffffff;
+}
+
+/* ===== Estilos generales ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--blanco);
+  color: var(--morado-oscuro);
+  line-height: 1.6;
+}
+
+/* ===== Encabezado y menú ===== */
+header {
+  background-color: var(--lila-claro);
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  font-family: Georgia, serif;
+  color: var(--morado-oscuro);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--morado-oscuro);
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--morado-medio);
+}
+
+/* ===== Contenido principal ===== */
+main {
+  padding: 2rem;
+}
+
+main a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #25d366;
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* ===== Pie de página ===== */
+footer {
+  background-color: var(--morado-pie);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem;
+}
