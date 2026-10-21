@@ -1,74 +1,332 @@
-/* ===== Variables de color ===== */
+/* ===== Variables ===== */
 :root {
   --morado-oscuro: #4a3560;
   --morado-medio: #7a5a9e;
   --morado-pie: #9b7bbf;
   --lila-claro: #f3e6fb;
+  --lila-tarjeta: #f6ecfc;
+  --rosa: #b8478a;
   --blanco: #ffffff;
+  --whatsapp: #25d366;
+  --sombra: 0 4px 14px rgba(74, 53, 96, 0.12);
+  --fuente-titulo: 'Playfair Display', Georgia, serif;
+  --fuente-texto: 'Lato', Arial, sans-serif;
 }
 
-/* ===== Estilos generales ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ===== Base ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--blanco);
+  font-family: var(--fuente-texto);
   color: var(--morado-oscuro);
   line-height: 1.6;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-areas:
+    "lateral principal"
+    "pie     pie";
+  min-height: 100vh;
 }
 
-/* ===== Encabezado y menú ===== */
-header {
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--fuente-titulo); }
+
+/* ===== Barra lateral (fija al hacer scroll) ===== */
+.barra-lateral {
+  grid-area: lateral;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
   background-color: var(--lila-claro);
-  padding: 1rem 2rem;
+  padding: 2rem 1.2rem;
 }
 
-header h1 {
-  font-family: Georgia, serif;
-  color: var(--morado-oscuro);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-nav a {
+.barra-lateral .logo {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 2.5rem;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--morado-oscuro);
+  color: var(--blanco);
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
   text-decoration: none;
-  color: var(--morado-oscuro);
-  font-weight: bold;
 }
 
-nav a:hover {
-  color: var(--morado-medio);
+.barra-lateral ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.barra-lateral nav a {
+  display: block;
+  padding: 0.55rem 1rem;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.barra-lateral nav a:hover {
+  background-color: rgba(122, 90, 158, 0.15);
+}
+
+.barra-lateral nav a[aria-current="page"] {
+  background-color: var(--morado-medio);
+  color: var(--blanco);
 }
 
 /* ===== Contenido principal ===== */
 main {
-  padding: 2rem;
+  grid-area: principal;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 2.5rem;
 }
 
-main a {
+/* ===== Banner ===== */
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--sombra);
+  text-align: center;
+}
+
+.banner-inicio {
+  background-image:
+    linear-gradient(rgba(74, 53, 96, 0.62), rgba(74, 53, 96, 0.45)),
+    url("img/banner_inicio.png");
+}
+
+.banner-texto {
+  color: var(--blanco);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.banner-texto h1 {
+  font-size: clamp(2.8rem, 7vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.banner-texto h1::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 3px;
+  margin: 1rem auto 1.1rem;
+  border-radius: 2px;
+  background-color: #f4a6d0;
+}
+
+.banner-texto p {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* ===== Botones ===== */
+.boton {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #25d366;
+  padding: 0.5rem 1.3rem;
+  border-radius: 24px;
+  background-color: var(--morado-medio);
   color: var(--blanco);
   text-decoration: none;
-  border-radius: 20px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background-color 0.25s, transform 0.25s;
+}
+
+.boton:hover { background-color: var(--morado-oscuro); transform: translateY(-2px); }
+
+/* ===== Técnicas ===== */
+.tecnicas { margin-top: 2.2rem; }
+
+.tecnicas-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.3rem;
+}
+
+.tecnicas-encabezado h2 { font-size: 1.5rem; }
+
+.ver-mas {
+  font-weight: 700;
+  color: var(--rosa);
+  text-decoration: none;
+}
+
+.ver-mas:hover { text-decoration: underline; }
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 14px;
+  background-color: var(--lila-tarjeta);
+  box-shadow: var(--sombra);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(74, 53, 96, 0.2);
+}
+
+.tarjeta img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 190px;
+  object-fit: cover;
+}
+
+/* Muestra completas las puntas de la foto de acrílicas tips */
+.tarjeta img[src*="acrilicas_tips"] {
+  object-position: center top;
+}
+
+.tarjeta-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.tarjeta h3 { font-size: 1.15rem; }
+
+.precio {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--rosa);
+  margin-bottom: 0.3rem;
 }
 
 /* ===== Pie de página ===== */
-footer {
-  background-color: var(--morado-pie);
+.pie {
+  grid-area: pie;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.1fr 1.1fr;
+  gap: 2.5rem;
+  padding: 3rem 3rem 1.2rem;
+  background: linear-gradient(135deg, #8765ab 0%, #9b7bbf 100%);
+  border-top: 5px solid var(--rosa);
   color: var(--blanco);
-  text-align: center;
-  padding: 1rem;
 }
+
+.pie h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  display: inline-block;
+}
+
+.pie li { margin-bottom: 0.45rem; }
+
+.pie a {
+  text-decoration: none;
+  opacity: 0.92;
+  transition: opacity 0.2s;
+}
+
+.pie a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.pie i {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+  text-align: center;
+}
+
+.pie-marca p { max-width: 280px; opacity: 0.92; }
+
+.pie-marca h2 {
+  border-bottom: none;
+  font-size: 1.6rem;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+}
+
+.derechos {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ===== Botones flotantes (WhatsApp y volver arriba) ===== */
+.flotantes {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.flotante {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--blanco);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s, background-color 0.25s;
+}
+
+.flotante:hover { transform: translateY(-3px) scale(1.05); }
+
+.flotante-whatsapp {
+  width: 58px;
+  height: 58px;
+  background-color: var(--whatsapp);
+  font-size: 1.9rem;
+}
+
+.flotante-whatsapp:hover { background-color: #1ea952; }
+
+.flotante-subir {
+  width: 44px;
+  height: 44px;
+  background-color: var(--morado-medio);
+  font-size: 1.1rem;
+}
+
+.flotante-subir:hover { background-color: var(--morado-oscuro); }
