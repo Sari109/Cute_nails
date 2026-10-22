@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Catálogo de servicios de uñas de Cute Nails: press on, base rubber, acrílicas, polygel, dipping y más, con sus precios.">
+  <meta name="description" content="Catálogo de servicios de uñas de Cute Nails: press on, base rubber, acrílicas, polygel, dipping y más, con sus precios y duración.">
   <title>Catálogo | Cute Nails</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,19 +14,30 @@
 </head>
 <body id="top">
 
-  <aside class="barra-lateral">
-    <a href="index.html" class="logo" aria-label="Cute Nails, ir al inicio">CN</a>
-    <nav aria-label="Menú principal">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
-        <li><a href="portafolio.html">Portafolio</a></li>
-        <li><a href="resenas.html">Reseñas</a></li>
-        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </aside>
+  <header class="cabecera">
+    <div class="cabecera-interior">
+      <a href="index.html" class="marca" aria-label="Cute Nails, ir al inicio">
+        <span class="marca-logo">CN</span>
+        <span class="marca-nombre">Cute Nails</span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-check" aria-label="Abrir o cerrar el menú">
+      <label for="menu-toggle" class="hamburguesa" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
+          <li><a href="portafolio.html">Portafolio</a></li>
+          <li><a href="resenas.html">Reseñas</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <header class="banner banner-pagina banner-catalogo">
@@ -38,6 +49,7 @@
 
     <section class="tecnicas" aria-labelledby="titulo-catalogo">
       <h2 id="titulo-catalogo" class="solo-lectores">Técnicas disponibles</h2>
+            <p class="catalogo-intro">Descubre la técnica ideal para ti, compara precios y cuidados, y elige el estilo perfecto para lucir unas uñas hermosas.</p>
 
       <div class="tarjetas">
         <article class="tarjeta">
@@ -45,6 +57,7 @@
           <div class="tarjeta-info">
             <h3>Press on</h3>
             <p class="precio">$50.000</p>
+            <p class="duracion"><i class="fa-regular fa-clock" aria-hidden="true"></i> 45 min</p>
             <a class="boton" href="detalle-press-on.html">Ver detalle</a>
           </div>
         </article>
@@ -53,6 +66,7 @@
           <div class="tarjeta-info">
             <h3>Base Rubber</h3>
             <p class="precio">$45.000</p>
+            <p class="duracion"><i class="fa-regular fa-clock" aria-hidden="true"></i> 1 h</p>
             <a class="boton" href="detalle-base-rubber.html">Ver detalle</a>
           </div>
         </article>
@@ -61,6 +75,7 @@
           <div class="tarjeta-info">
             <h3>Acrílicas tips</h3>
             <p class="precio">$55.000</p>
+            <p class="duracion"><i class="fa-regular fa-clock" aria-hidden="true"></i> 1 h 30 min</p>
             <a class="boton" href="detalle-acrilicas-tips.html">Ver detalle</a>
           </div>
         </article>
@@ -69,6 +84,7 @@
           <div class="tarjeta-info">
             <h3>Dipping</h3>
             <p class="precio">$45.000</p>
+            <p class="duracion"><i class="fa-regular fa-clock" aria-hidden="true"></i> 1 h</p>
             <a class="boton" href="detalle-dipping.html">Ver detalle</a>
           </div>
         </article>
@@ -77,6 +93,7 @@
           <div class="tarjeta-info">
             <h3>Acrílicas esculpidas</h3>
             <p class="precio">$60.000</p>
+            <p class="duracion"><i class="fa-regular fa-clock" aria-hidden="true"></i> 2 h</p>
             <a class="boton" href="detalle-acrilicas-esculpidas.html">Ver detalle</a>
           </div>
         </article>
@@ -85,6 +102,7 @@
           <div class="tarjeta-info">
             <h3>Polygel</h3>
             <p class="precio">$50.000</p>
+            <p class="duracion"><i class="fa-regular fa-clock" aria-hidden="true"></i> 1 h 30 min</p>
             <a class="boton" href="detalle-polygel.html">Ver detalle</a>
           </div>
         </article>
@@ -93,6 +111,7 @@
           <div class="tarjeta-info">
             <h3>Semipermanente</h3>
             <p class="precio">$30.000</p>
+            <p class="duracion"><i class="fa-regular fa-clock" aria-hidden="true"></i> 50 min</p>
             <a class="boton" href="detalle-semipermanente.html">Ver detalle</a>
           </div>
         </article>
@@ -101,44 +120,108 @@
           <div class="tarjeta-info">
             <h3>Tradicional</h3>
             <p class="precio">$15.000</p>
+            <p class="duracion"><i class="fa-regular fa-clock" aria-hidden="true"></i> 40 min</p>
             <a class="boton" href="detalle-tradicional.html">Ver detalle</a>
           </div>
         </article>
       </div>
     </section>
+
+    <section class="comparativa seccion" aria-labelledby="titulo-comparativa">
+      <h2 id="titulo-comparativa" class="titulo-centrado">Compara las técnicas</h2>
+      <div class="tabla-contenedor">
+        <table class="tabla-comparativa">
+          <caption class="solo-lectores">Comparación de precio, duración del servicio y duración puesta de cada técnica</caption>
+          <thead>
+            <tr>
+              <th scope="col">Técnica</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Duración del servicio</th>
+              <th scope="col">Cuánto dura puesta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="detalle-press-on.html">Press on</a></th>
+              <td>$50.000</td>
+              <td>45 min</td>
+              <td>1 a 2 semanas</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="detalle-base-rubber.html">Base Rubber</a></th>
+              <td>$45.000</td>
+              <td>1 h</td>
+              <td>Hasta 3 semanas</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></th>
+              <td>$55.000</td>
+              <td>1 h 30 min</td>
+              <td>Relleno cada 2 a 3 semanas</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="detalle-dipping.html">Dipping</a></th>
+              <td>$45.000</td>
+              <td>1 h</td>
+              <td>2 a 4 semanas</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="detalle-acrilicas-esculpidas.html">Acrílicas esculpidas</a></th>
+              <td>$60.000</td>
+              <td>2 h</td>
+              <td>Relleno cada 2 a 3 semanas</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="detalle-polygel.html">Polygel</a></th>
+              <td>$50.000</td>
+              <td>1 h 30 min</td>
+              <td>Hasta 4 semanas</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="detalle-semipermanente.html">Semipermanente</a></th>
+              <td>$30.000</td>
+              <td>50 min</td>
+              <td>Unas 2 semanas</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="detalle-tradicional.html">Tradicional</a></th>
+              <td>$15.000</td>
+              <td>40 min</td>
+              <td>Menos que el gel</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="comparativa-nota">Los tiempos son aproximados y dependen del largo, del cuidado y de cada persona.</p>
+    </section>
   </main>
 
   <footer class="pie">
-    <section class="pie-marca">
-      <h2>Cute Nails</h2>
-      <p>Cuidamos tus uñas desde la comodidad de tu casa.</p>
-    </section>
+    <div class="pie-contenido">
+      <section class="pie-marca">
+        <h2>Cute Nails</h2>
+        <p>Cuidamos tus uñas desde la comodidad de tu casa.</p>
+      </section>
 
-    <nav aria-label="Técnicas destacadas">
-      <h2>Técnicas</h2>
-      <ul>
-        <li><a href="detalle-press-on.html">Press on</a></li>
-        <li><a href="detalle-base-rubber.html">Base Rubber</a></li>
-        <li><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></li>
-        <li><a href="detalle-semipermanente.html">Semipermanente</a></li>
-      </ul>
-    </nav>
+      <nav aria-label="Técnicas destacadas">
+        <h2>Técnicas</h2>
+        <ul>
+          <li><a href="detalle-press-on.html">Press on</a></li>
+          <li><a href="detalle-base-rubber.html">Base Rubber</a></li>
+          <li><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></li>
+          <li><a href="detalle-semipermanente.html">Semipermanente</a></li>
+        </ul>
+      </nav>
 
-    <section>
-      <h2>Escríbenos</h2>
-      <ul>
-        <li><a href="https://wa.me/573147051152"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 314 705 1152</a></li>
-        <li><a href="https://instagram.com/cutenails_0121"><i class="fa-brands fa-instagram" aria-hidden="true"></i> cutenails_0121</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Atención</h2>
-      <ul>
-        <li><i class="fa-regular fa-clock" aria-hidden="true"></i> Lunes a sábado</li>
-        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="https://wa.me/573147051152"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 314 705 1152</a></li>
+          <li><a href="https://instagram.com/cutenails_0121"><i class="fa-brands fa-instagram" aria-hidden="true"></i> cutenails_0121</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba · Lunes a sábado</li>
+        </ul>
+      </section>
+    </div>
 
     <p class="derechos">© 2026 Cute Nails. Todos los derechos reservados.</p>
   </footer>

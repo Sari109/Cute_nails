@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cute Nails: servicios de uñas a domicilio en Sahagún, Córdoba.">
+  <meta name="description" content="Cute Nails: servicios de uñas a domicilio en Sahagún, Córdoba. Press on, acrílicas, polygel, semipermanente y más.">
   <title>Cute Nails | Servicios de uñas a domicilio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,32 +14,69 @@
 </head>
 <body id="top">
 
-  <aside class="barra-lateral">
-    <a href="index.html" class="logo" aria-label="Cute Nails, ir al inicio">CN</a>
-    <nav aria-label="Menú principal">
-      <ul>
-        <li><a href="index.html" aria-current="page">Inicio</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="portafolio.html">Portafolio</a></li>
-        <li><a href="resenas.html">Reseñas</a></li>
-        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </aside>
+  <header class="cabecera">
+    <div class="cabecera-interior">
+      <a href="index.html" class="marca" aria-label="Cute Nails, ir al inicio">
+        <span class="marca-logo">CN</span>
+        <span class="marca-nombre">Cute Nails</span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-check" aria-label="Abrir o cerrar el menú">
+      <label for="menu-toggle" class="hamburguesa" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="portafolio.html">Portafolio</a></li>
+          <li><a href="resenas.html">Reseñas</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <header class="banner banner-inicio">
-      <div class="banner-texto">
-        <h1>Cute Nails</h1>
-        <p>Servicios de uñas a domicilio</p>
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="hero-contenido">
+        <p class="hero-etiqueta">Uñas a domicilio · Sahagún, Córdoba</p>
+        <h1 id="titulo-hero">Tus uñas perfectas, sin salir de casa</h1>
+        <p class="hero-texto">Press on, acrílicas, polygel, semipermanente y más. Elige tu técnica y vamos a ti.</p>
+        <div class="hero-botones">
+          <a class="boton boton-grande" href="catalogo.html">Ver catálogo y precios</a>
+          <a class="boton boton-grande boton-borde" href="portafolio.html">Ver nuestros trabajos</a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <section class="tecnicas" aria-labelledby="titulo-tecnicas">
+    <section class="beneficios" aria-labelledby="titulo-beneficios">
+      <h2 id="titulo-beneficios" class="solo-lectores">Por qué elegirnos</h2>
+      <ul class="beneficios-lista">
+        <li class="beneficio">
+          <i class="fa-solid fa-house-chimney" aria-hidden="true"></i>
+          <h3>A domicilio</h3>
+          <p>Vamos a tu casa en Sahagún, Córdoba.</p>
+        </li>
+        <li class="beneficio">
+          <i class="fa-solid fa-gem" aria-hidden="true"></i>
+          <h3>Para todos los gustos</h3>
+          <p>8 técnicas, desde $15.000.</p>
+        </li>
+        <li class="beneficio">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          <h3>De lunes a sábado</h3>
+          <p>Agenda el día que mejor te quede.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tecnicas seccion" aria-labelledby="titulo-tecnicas">
       <div class="tecnicas-encabezado">
         <h2 id="titulo-tecnicas">Algunas de nuestras técnicas</h2>
-        <a class="ver-mas" href="catalogo.html">Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        <a class="ver-mas" href="catalogo.html">Ver todas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       </div>
 
       <div class="tarjetas">
@@ -69,39 +106,94 @@
         </article>
       </div>
     </section>
+
+    <section class="pasos seccion" aria-labelledby="titulo-pasos">
+      <h2 id="titulo-pasos" class="titulo-centrado">¿Cómo funciona?</h2>
+      <ol class="pasos-lista">
+        <li class="paso">
+          <span class="paso-numero" aria-hidden="true">1</span>
+          <h3>Elige tu técnica</h3>
+          <p>Mira el catálogo con sus precios y escoge la que más te guste.</p>
+        </li>
+        <li class="paso">
+          <span class="paso-numero" aria-hidden="true">2</span>
+          <h3>Agenda tu cita</h3>
+          <p>Escríbenos por WhatsApp o desde la página de contacto y acordamos el día y la hora.</p>
+        </li>
+        <li class="paso">
+          <span class="paso-numero" aria-hidden="true">3</span>
+          <h3>Te visitamos</h3>
+          <p>Llegamos a tu casa con lo necesario para dejar tus uñas listas.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="muestra seccion" aria-labelledby="titulo-muestra">
+      <div class="tecnicas-encabezado">
+        <h2 id="titulo-muestra">Nuestros trabajos</h2>
+        <a class="ver-mas" href="portafolio.html">Ver portafolio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="muestra-galeria">
+        <img src="img/despues1.jpg" alt="Manos con uñas rosadas y borde fucsia" loading="lazy">
+        <img src="img/despues2.jpg" alt="Pies con esmalte morado" loading="lazy">
+        <img src="img/despues3.jpg" alt="Manos con uñas largas color vino" loading="lazy">
+        <img src="img/despues8.png" alt="Pies con esmalte verde" loading="lazy">
+      </div>
+    </section>
+
+    <section class="faq seccion" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq" class="titulo-centrado">Preguntas frecuentes</h2>
+      <div class="faq-lista">
+        <details class="faq-item">
+          <summary>¿Atienden manos y pies?</summary>
+          <p>Sí, hacemos manicure y pedicure, para mujeres y para hombres.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto dura un servicio?</summary>
+          <p>Entre 40 minutos y 2 horas, según la técnica. En cada técnica del catálogo verás su duración.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cada cuánto se hacen los rellenos?</summary>
+          <p>En acrílicas, cada 2 o 3 semanas. En polygel, puede durar hasta 4 semanas según el largo y el cuidado.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo quitarme las uñas en casa?</summary>
+          <p>Recomendamos el retiro profesional en gel, dipping y polygel, porque hacerlo en casa puede dañar tu uña natural.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Dónde y cuándo atienden?</summary>
+          <p>Vamos a tu casa en Sahagún, Córdoba, de lunes a sábado.</p>
+        </details>
+      </div>
+    </section>
   </main>
 
   <footer class="pie">
-    <section class="pie-marca">
-      <h2>Cute Nails</h2>
-      <p>Cuidamos tus uñas desde la comodidad de tu casa.</p>
-    </section>
+    <div class="pie-contenido">
+      <section class="pie-marca">
+        <h2>Cute Nails</h2>
+        <p>Cuidamos tus uñas desde la comodidad de tu casa.</p>
+      </section>
 
-    <nav aria-label="Técnicas destacadas">
-      <h2>Técnicas</h2>
-      <ul>
-        <li><a href="detalle-press-on.html">Press on</a></li>
-        <li><a href="detalle-base-rubber.html">Base Rubber</a></li>
-        <li><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></li>
-        <li><a href="detalle-semipermanente.html">Semipermanente</a></li>
-      </ul>
-    </nav>
+      <nav aria-label="Técnicas destacadas">
+        <h2>Técnicas</h2>
+        <ul>
+          <li><a href="detalle-press-on.html">Press on</a></li>
+          <li><a href="detalle-base-rubber.html">Base Rubber</a></li>
+          <li><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></li>
+          <li><a href="detalle-semipermanente.html">Semipermanente</a></li>
+        </ul>
+      </nav>
 
-    <section>
-      <h2>Escríbenos</h2>
-      <ul>
-        <li><a href="https://wa.me/573147051152"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 314 705 1152</a></li>
-        <li><a href="https://instagram.com/cutenails_0121"><i class="fa-brands fa-instagram" aria-hidden="true"></i> cutenails_0121</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Atención</h2>
-      <ul>
-        <li><i class="fa-regular fa-clock" aria-hidden="true"></i> Lunes a sábado</li>
-        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="https://wa.me/573147051152"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 314 705 1152</a></li>
+          <li><a href="https://instagram.com/cutenails_0121"><i class="fa-brands fa-instagram" aria-hidden="true"></i> cutenails_0121</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba · Lunes a sábado</li>
+        </ul>
+      </section>
+    </div>
 
     <p class="derechos">© 2026 Cute Nails. Todos los derechos reservados.</p>
   </footer>

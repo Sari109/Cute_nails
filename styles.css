@@ -1,3 +1,7 @@
+/* =========================================================
+   CUTE NAILS - Hoja de estilos
+   ========================================================= */
+
 /* ===== Variables ===== */
 :root {
   --morado-oscuro: #4a3560;
@@ -7,7 +11,8 @@
   --lila-tarjeta: #f6ecfc;
   --rosa: #b8478a;
   --whatsapp: #25d366;
-  --sombra: 0 4px 14px rgba(74, 53, 96, .12);
+  --sombra: 0 10px 30px rgba(74, 53, 96, .10);
+  --sombra-fuerte: 0 14px 34px rgba(74, 53, 96, .18);
   --fuente-titulos: "Playfair Display", Georgia, serif;
   --fuente-texto: "Lato", Arial, sans-serif;
 }
@@ -15,76 +20,98 @@
 /* ===== Base ===== */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
+/* Macro-layout con CSS Grid: cabecera / contenido / pie */
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: var(--fuente-texto);
   color: var(--morado-oscuro);
   background: #fff;
   line-height: 1.6;
   display: grid;
-  grid-template-columns: 220px 1fr;
-  grid-template-areas: "lateral principal" "pie pie";
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "cabecera" "principal" "pie";
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
-ul { list-style: none; margin: 0; padding: 0; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3 { font-family: var(--fuente-titulos); margin: 0; line-height: 1.2; }
+p { margin: 0; }
 
 .solo-lectores {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
-/* ===== Barra lateral ===== */
-.barra-lateral {
-  grid-area: lateral;
-  position: sticky; top: 0; height: 100vh;
-  background: var(--lila-claro);
-  padding: 2rem 1rem;
-  display: flex; flex-direction: column; align-items: center; gap: 2rem;
+/* ===== Cabecera con menú horizontal ===== */
+.cabecera {
+  grid-area: cabecera;
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255, 255, 255, .94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(122, 90, 158, .15);
 }
-.barra-lateral .logo {
-  width: 72px; height: 72px; border-radius: 50%;
+.cabecera-interior {
+  max-width: 1180px; margin: 0 auto; padding: .8rem 2rem;
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.marca { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+.marca-logo {
+  width: 44px; height: 44px; border-radius: 50%;
   background: var(--morado-oscuro); color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--fuente-titulos); font-weight: 700; font-size: 1.5rem;
-  text-decoration: none; padding: 0;
+  font-family: var(--fuente-titulos); font-weight: 700; font-size: 1.05rem;
 }
-.barra-lateral nav { width: 100%; }
-.barra-lateral nav ul { display: flex; flex-direction: column; gap: .4rem; }
-.barra-lateral nav a {
-  display: block; padding: .65rem 1.1rem; border-radius: 999px;
-  text-decoration: none; font-weight: 700; transition: background .2s, color .2s;
+.marca-nombre { font-family: var(--fuente-titulos); font-weight: 700; font-size: 1.35rem; }
+
+.menu { margin: 0 auto; }
+.menu ul { display: flex; gap: .3rem; }
+.menu a {
+  display: block; padding: .5rem 1rem; border-radius: 999px;
+  text-decoration: none; font-weight: 700; font-size: .98rem;
+  transition: background .2s, color .2s;
 }
-.barra-lateral nav a:hover { background: rgba(122, 90, 158, .18); }
-.barra-lateral nav a[aria-current="page"] { background: var(--morado-medio); color: #fff; }
+.menu a:hover { background: var(--lila-claro); }
+.menu a[aria-current="page"] { background: var(--morado-medio); color: #fff; }
+
+.menu-check, .hamburguesa { display: none; }
 
 /* ===== Contenido principal ===== */
 main {
   grid-area: principal;
-  width: 100%; max-width: 1100px; margin: 0 auto;
-  padding: 1.5rem 2rem 2.5rem;
+  width: 100%; max-width: 1180px; margin: 0 auto;
+  padding: 2rem 2rem 3.5rem;
 }
+.seccion { margin-top: 5rem; }
 
-/* ===== Banners ===== */
+/* ===== Botones ===== */
+.boton {
+  display: inline-block; padding: .6rem 1.4rem; border-radius: 999px;
+  background: var(--morado-medio); color: #fff; text-decoration: none; font-weight: 700;
+  border: 2px solid var(--morado-medio);
+  transition: background .2s, transform .2s, color .2s;
+}
+.boton:hover { background: var(--morado-oscuro); border-color: var(--morado-oscuro); transform: translateY(-2px); }
+.boton-grande { padding: .85rem 1.9rem; font-size: 1.05rem; }
+.boton-cabecera { background: var(--rosa); border-color: var(--rosa); padding: .55rem 1.3rem; }
+.boton-cabecera:hover { background: var(--morado-oscuro); border-color: var(--morado-oscuro); }
+.boton-borde { background: transparent; border-color: #fff; color: #fff; }
+.boton-borde:hover { background: #fff; border-color: #fff; color: var(--morado-oscuro); }
+.boton-claro { background: #fff; border-color: #fff; color: var(--morado-oscuro); }
+.boton-claro:hover { background: var(--lila-claro); border-color: var(--lila-claro); color: var(--morado-oscuro); }
+
+/* ===== Banners de página ===== */
 .banner {
-  position: relative; border-radius: 18px; overflow: hidden;
+  position: relative; border-radius: 22px; overflow: hidden;
   min-height: 300px; display: flex; align-items: center; justify-content: center;
   background-size: cover; background-position: center; color: #fff; text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 .banner-pagina { min-height: 240px; }
 .banner-texto { padding: 1.5rem; }
 .banner-texto h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
-.banner-texto p { margin: .5rem 0 0; font-size: 1.15rem; }
-
-.banner-inicio {
-  background-image: linear-gradient(rgba(74, 53, 96, .62), rgba(74, 53, 96, .45)), url("img/banner_inicio.png");
-}
-.banner-inicio h1::after {
-  content: ""; display: block; width: 90px; height: 4px; border-radius: 4px;
-  background: #f4a6d0; margin: .8rem auto 0;
-}
+.banner-texto p { margin-top: .5rem; font-size: 1.15rem; }
 
 .banner-catalogo {
   background-image: linear-gradient(rgba(255, 255, 255, .25), rgba(255, 255, 255, .25)), url("img/banner_catalogo.png");
@@ -103,100 +130,271 @@ main {
 .banner-portafolio h1 { font-size: clamp(3rem, 7vw, 5rem); }
 .banner-portafolio p { color: var(--rosa); font-weight: 700; font-size: 1.3rem; }
 
-/* ===== Botón ===== */
-.boton {
-  display: inline-block; padding: .55rem 1.3rem; border-radius: 999px;
-  background: var(--morado-medio); color: #fff; text-decoration: none; font-weight: 700;
-  transition: background .2s, transform .2s;
+/* ===== Inicio: hero ===== */
+.hero {
+  position: relative; border-radius: 26px; overflow: hidden;
+  min-height: 520px; display: flex; align-items: center;
+  background-image: linear-gradient(90deg, rgba(74, 53, 96, .82) 0%, rgba(74, 53, 96, .55) 55%, rgba(74, 53, 96, .25) 100%), url("img/banner_inicio.png");
+  background-size: cover; background-position: center;
+  color: #fff;
 }
-.boton:hover { background: var(--morado-oscuro); transform: translateY(-2px); }
+.hero-contenido { padding: 3rem 3.5rem; max-width: 640px; }
+.hero-etiqueta {
+  display: inline-block; padding: .3rem 1rem; border-radius: 999px;
+  background: rgba(255, 255, 255, .18); font-weight: 700; font-size: .9rem; letter-spacing: .03em;
+}
+.hero h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); margin: 1.1rem 0 1rem; }
+.hero-texto { font-size: 1.2rem; max-width: 520px; }
+.hero-botones { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+
+/* ===== Inicio: beneficios ===== */
+.beneficios { margin-top: 3rem; }
+.beneficios-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.beneficio {
+  background: var(--lila-tarjeta); border-radius: 20px; padding: 1.8rem 1.5rem; text-align: center;
+  box-shadow: var(--sombra);
+}
+.beneficio i {
+  width: 58px; height: 58px; border-radius: 50%; margin: 0 auto 1rem;
+  background: #fff; color: var(--rosa); font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.beneficio h3 { font-size: 1.2rem; margin-bottom: .3rem; }
 
 /* ===== Técnicas y tarjetas ===== */
 .tecnicas-encabezado {
   display: flex; justify-content: space-between; align-items: center;
-  gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+  gap: 1rem; flex-wrap: wrap; margin-bottom: 1.8rem;
 }
-.tecnicas h2 { font-size: 1.7rem; }
+.tecnicas h2, .muestra h2 { font-size: 2rem; }
 .ver-mas { color: var(--rosa); font-weight: 700; text-decoration: none; }
 .ver-mas:hover { text-decoration: underline; }
 
-.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; }
 .tarjeta {
-  background: var(--lila-tarjeta); border-radius: 16px; overflow: hidden;
+  background: var(--lila-tarjeta); border-radius: 20px; overflow: hidden;
   box-shadow: var(--sombra); display: flex; flex-direction: column;
+  transition: transform .25s, box-shadow .25s;
 }
-.tarjeta img { width: 100%; aspect-ratio: 16 / 10; max-height: 190px; object-fit: cover; }
+.tarjeta:hover { transform: translateY(-5px); box-shadow: var(--sombra-fuerte); }
+.tarjeta img { width: 100%; aspect-ratio: 16 / 10; max-height: 210px; object-fit: cover; }
 .tarjeta img[src*="acrilicas_tips"] { object-position: center top; }
-.tarjeta-info { padding: 1rem 1.2rem 1.3rem; display: flex; flex-direction: column; align-items: flex-start; gap: .4rem; }
-.tarjeta-info h3 { font-size: 1.2rem; }
-.precio { margin: 0 0 .4rem; font-weight: 700; color: var(--rosa); font-size: 1.1rem; }
+.tarjeta-info { padding: 1.1rem 1.3rem 1.4rem; display: flex; flex-direction: column; align-items: flex-start; gap: .4rem; }
+.tarjeta-info h3 { font-size: 1.25rem; }
+.precio { margin-bottom: .4rem; font-weight: 700; color: var(--rosa); font-size: 1.15rem; }
 
-/* ===== Detalle ===== */
-.migas { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; font-size: .9rem; margin-bottom: 1.2rem; }
+/* ===== Inicio: pasos ===== */
+.titulo-centrado { text-align: center; font-size: 2rem; margin-bottom: 2.2rem; }
+.pasos-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+.paso { text-align: center; padding: 0 .5rem; }
+.paso-numero {
+  width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 1rem;
+  background: var(--morado-medio); color: #fff;
+  font-family: var(--fuente-titulos); font-weight: 700; font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.paso h3 { font-size: 1.2rem; margin-bottom: .3rem; }
+
+/* ===== Inicio: muestra de trabajos ===== */
+.muestra-galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.muestra-galeria img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 18px; box-shadow: var(--sombra); }
+
+/* ===== Inicio: llamado final ===== */
+.llamado {
+  text-align: center; color: #fff; border-radius: 26px; padding: 3.5rem 1.5rem;
+  background: linear-gradient(135deg, var(--morado-oscuro), var(--rosa));
+}
+.llamado h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: .6rem; }
+.llamado p { font-size: 1.15rem; margin-bottom: 1.6rem; }
+
+/* ===== Detalle de técnica ===== */
+.migas { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; font-size: .9rem; margin-bottom: 1.5rem; }
 .migas a { color: var(--morado-medio); font-weight: 700; text-decoration: none; }
 .migas a:hover { text-decoration: underline; }
 .migas i { font-size: .7rem; }
 
-.detalle { display: grid; grid-template-columns: .9fr 1.1fr; gap: 2.5rem; align-items: center; }
-.detalle-foto { width: 100%; aspect-ratio: 1; max-height: 440px; object-fit: cover; border-radius: 18px; box-shadow: var(--sombra); }
+.detalle { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: center; }
+.detalle-foto { width: 100%; aspect-ratio: 1; max-height: 460px; object-fit: cover; border-radius: 24px; box-shadow: var(--sombra-fuerte); }
 .detalle-info h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: .4rem; }
-.detalle-descripcion { margin: 0 0 .5rem; font-size: 1.05rem; }
-.detalle-precio { font-size: 1.6rem; font-weight: 700; color: var(--rosa); margin: 0 0 1rem; }
+.detalle-descripcion { margin-bottom: .5rem; font-size: 1.08rem; }
+.detalle-precio { font-size: 1.7rem; font-weight: 700; color: var(--rosa); margin-bottom: 1rem; }
 .etiquetas { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0; }
-.etiquetas li { background: var(--lila-claro); padding: .3rem .9rem; border-radius: 999px; font-size: .9rem; font-weight: 700; }
-.recomendaciones { margin: 1rem 0; padding-left: 1.2rem; list-style: disc; }
-.recomendaciones li { margin-bottom: .3rem; }
-.nota-agendar { background: var(--lila-claro); border-left: 4px solid var(--rosa); padding: .8rem 1rem; border-radius: 8px; margin-top: 1rem; }
-.detalle + .tecnicas { margin-top: 3.5rem; }
+.etiquetas li { background: var(--lila-claro); padding: .35rem 1rem; border-radius: 999px; font-size: .9rem; font-weight: 700; }
+.recomendaciones { margin: 1.2rem 0; }
+.recomendaciones h2 { font-size: 1.3rem; margin-bottom: .5rem; }
+.recomendaciones ul { list-style: disc; padding-left: 1.3rem; }
+.recomendaciones li { margin-bottom: .35rem; }
+.nota-agendar { background: var(--lila-claro); border-left: 4px solid var(--rosa); padding: .9rem 1.1rem; border-radius: 10px; margin-top: 1.2rem; }
+.detalle + .tecnicas { margin-top: 4.5rem; }
 
 /* ===== Portafolio ===== */
-.seccion-trabajos { margin-bottom: 3rem; }
+.seccion-trabajos { margin-bottom: 3.5rem; }
 .seccion-trabajos h2 { font-size: 1.9rem; margin-bottom: 1.5rem; }
 .seccion-trabajos h2::after {
   content: ""; display: block; width: 70px; height: 4px; border-radius: 4px;
   background: var(--rosa); margin-top: .5rem;
 }
-.trabajos { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; }
+.trabajos { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.8rem; }
 .trabajo {
   display: grid; grid-template-columns: 1fr 1fr; gap: .8rem;
-  background: var(--lila-tarjeta); border-radius: 16px; padding: .9rem; box-shadow: var(--sombra);
-  margin: 0;
+  background: var(--lila-tarjeta); border-radius: 20px; padding: .9rem; box-shadow: var(--sombra);
 }
 .trabajo figure { position: relative; margin: 0; }
-.trabajo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; }
+.trabajo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; }
 .trabajo figcaption {
   position: absolute; top: .5rem; left: .5rem;
-  background: rgba(255, 255, 255, .9); color: var(--morado-oscuro);
+  background: rgba(255, 255, 255, .92); color: var(--morado-oscuro);
   font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
   padding: .15rem .6rem; border-radius: 999px;
 }
 .trabajo figure:last-child figcaption { background: var(--rosa); color: #fff; }
 
-/* ===== Pie de página ===== */
+/* ===== Pie de página (compacto) ===== */
 .pie {
-  grid-area: pie; position: relative; z-index: 2;
+  grid-area: pie;
   background: linear-gradient(135deg, #8765ab, var(--morado-pie));
-  border-top: 5px solid var(--rosa); color: #fff;
-  padding: 2.5rem 3rem 1.5rem;
-  display: grid; grid-template-columns: 1.5fr 1fr 1.1fr 1.1fr; gap: 2rem;
+  border-top: 4px solid var(--rosa); color: #fff;
+  padding: 1.8rem 2rem 1rem;
 }
-.pie-marca p { margin: 0; }
-.pie h2 { font-size: 1.2rem; margin-bottom: .8rem; }
-.pie ul { display: flex; flex-direction: column; gap: .4rem; }
+.pie-contenido {
+  max-width: 1116px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.4fr 1fr 1.4fr; gap: 2rem;
+}
+.pie h2 { font-size: 1.1rem; margin-bottom: .5rem; }
+.pie p { font-size: .95rem; }
+.pie ul { display: flex; flex-direction: column; gap: .25rem; font-size: .95rem; }
 .pie a { text-decoration: none; }
 .pie a:hover { text-decoration: underline; }
 .pie i { margin-right: .4rem; }
-.derechos { grid-column: 1 / -1; margin: 1rem 0 0; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .3); text-align: center; font-size: .9rem; }
+.derechos {
+  max-width: 1116px; margin: 1.2rem auto 0; padding-top: .8rem;
+  border-top: 1px solid rgba(255, 255, 255, .3); text-align: center; font-size: .85rem;
+}
 
 /* ===== Botones flotantes ===== */
-.flotantes { position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 5; display: flex; flex-direction: column; align-items: center; gap: .8rem; }
-.flotante { display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; text-decoration: none; box-shadow: 0 4px 12px rgba(0, 0, 0, .25); transition: transform .2s; }
+.flotantes { position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 20; display: flex; flex-direction: column; align-items: center; gap: .8rem; }
+.flotante {
+  display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff;
+  text-decoration: none; box-shadow: 0 4px 12px rgba(0, 0, 0, .25); transition: transform .2s;
+}
 .flotante:hover { transform: scale(1.08); }
 .flotante-subir { width: 44px; height: 44px; background: var(--morado-medio); font-size: 1.1rem; }
 .flotante-whatsapp { width: 58px; height: 58px; background: var(--whatsapp); font-size: 1.8rem; }
 
-/* ===== Ajuste: lista de recomendaciones ===== */
-.recomendaciones { padding: 0; margin: 1.2rem 0; }
-.recomendaciones h2 { font-size: 1.3rem; margin-bottom: .5rem; }
-.recomendaciones ul { list-style: disc; padding-left: 1.3rem; }
-.recomendaciones li { margin-bottom: .3rem; }
+/* =========================================================
+   RESPONSIVE (3 breakpoints: escritorio / tablet / móvil)
+   ========================================================= */
+
+/* ----- Tablet: hasta 1024px ----- */
+@media (max-width: 1024px) {
+  .cabecera-interior { padding: .8rem 1.5rem; gap: 1rem; }
+  .menu a { padding: .5rem .75rem; font-size: .92rem; }
+  main { padding: 1.5rem 1.5rem 3rem; }
+  .pie { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .hero { min-height: 460px; }
+  .hero-contenido { padding: 2.5rem; }
+  .detalle { gap: 2rem; }
+  .muestra-galeria { grid-template-columns: repeat(2, 1fr); }
+  .pie-contenido { grid-template-columns: 1fr 1fr; }
+}
+
+/* ----- Móvil grande: hasta 768px (menú hamburguesa) ----- */
+@media (max-width: 768px) {
+  .cabecera-interior { flex-wrap: wrap; padding: .7rem 1rem; }
+  .marca { margin-right: auto; }
+  .boton-cabecera { padding: .45rem 1rem; font-size: .9rem; }
+
+  .hamburguesa {
+    display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: .5rem;
+  }
+  .hamburguesa span { width: 24px; height: 3px; border-radius: 3px; background: var(--morado-oscuro); }
+
+  .menu { display: none; width: 100%; margin: 0; order: 5; }
+  .menu-check:checked ~ .menu { display: block; }
+  .menu ul { flex-direction: column; gap: .2rem; padding: .5rem 0 .8rem; }
+  .menu a { padding: .75rem 1rem; }
+
+  main { padding: 1rem 1rem 2.5rem; }
+  .seccion { margin-top: 3.5rem; }
+  .banner { min-height: 200px; border-radius: 18px; margin-bottom: 2rem; }
+  .banner-pagina { min-height: 180px; }
+  .banner-catalogo .banner-texto { padding: 1rem 1.5rem; }
+
+  .hero { min-height: 440px; border-radius: 20px; background-position: 70% center; }
+  .hero-contenido { padding: 2rem 1.5rem; }
+  .hero-texto { font-size: 1.05rem; }
+
+  .detalle { grid-template-columns: 1fr; }
+  .detalle-foto { max-height: 380px; }
+
+  .trabajos { grid-template-columns: 1fr; }
+  .tecnicas h2, .muestra h2, .titulo-centrado { font-size: 1.6rem; }
+
+  .pie { padding: 1.5rem 1rem 1rem; }
+  .pie-contenido { grid-template-columns: 1fr; gap: 1.2rem; }
+}
+
+/* ----- Móvil pequeño: hasta 480px ----- */
+@media (max-width: 480px) {
+  .marca-nombre { font-size: 1.15rem; }
+  .marca-logo { width: 38px; height: 38px; font-size: .95rem; }
+  .hero { min-height: 400px; }
+  .hero-botones { flex-direction: column; align-items: stretch; text-align: center; }
+  .boton-grande { padding: .8rem 1.2rem; }
+  .muestra-galeria { gap: .6rem; }
+  .trabajo { padding: .6rem; gap: .5rem; }
+  .llamado { padding: 2.5rem 1rem; border-radius: 20px; }
+  .flotante-whatsapp { width: 52px; height: 52px; font-size: 1.6rem; }
+  .flotante-subir { width: 40px; height: 40px; }
+}
+
+/* ===== Ajustes: hero más compacto, menú a la derecha y preguntas frecuentes ===== */
+.hero { min-height: 380px; }
+.hero h1 { font-size: clamp(2rem, 4.2vw, 3rem); }
+.hero-texto { font-size: 1.1rem; }
+.hero-botones { margin-top: 1.5rem; }
+
+@media (min-width: 769px) {
+  .menu { margin: 0 0 0 auto; }
+  .hero-contenido { padding: 2.5rem 3rem; }
+}
+
+.faq-lista { display: grid; gap: .8rem; max-width: 820px; margin: 0 auto; }
+.faq-item { background: var(--lila-tarjeta); border-radius: 16px; padding: 0 1.4rem; box-shadow: var(--sombra); }
+.faq-item summary {
+  cursor: pointer; list-style: none; padding: 1.1rem 0; font-weight: 700;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--rosa); font-size: 1.5rem; line-height: 1; }
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { padding-bottom: 1.2rem; }
+
+/* ===== Catálogo: introducción, duración en tarjetas y tabla comparativa ===== */
+.catalogo-intro { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; font-size: 1.15rem; }
+.duracion { display: flex; align-items: center; gap: .4rem; color: var(--morado-medio); font-weight: 700; font-size: .95rem; margin-bottom: .5rem; }
+
+.tabla-contenedor { overflow-x: auto; border-radius: 18px; box-shadow: var(--sombra); background: #fff; }
+.tabla-comparativa { width: 100%; min-width: 640px; border-collapse: collapse; text-align: left; }
+.tabla-comparativa th, .tabla-comparativa td { padding: .95rem 1.2rem; }
+.tabla-comparativa thead th { background: var(--morado-medio); color: #fff; font-size: .95rem; }
+.tabla-comparativa tbody tr:nth-child(even) { background: var(--lila-tarjeta); }
+.tabla-comparativa tbody th { font-weight: 700; }
+.tabla-comparativa tbody th a { text-decoration: none; }
+.tabla-comparativa tbody th a:hover { color: var(--rosa); text-decoration: underline; }
+.comparativa-nota { text-align: center; font-size: .9rem; margin-top: 1rem; color: var(--morado-medio); }
+
+/* ===== Ajuste de espaciado: más aire y orden en pantallas grandes ===== */
+@media (min-width: 769px) {
+  main { padding-top: 2.5rem; padding-bottom: 5rem; }
+  .banner { margin-bottom: 4rem; }
+  .seccion { margin-top: 6rem; }
+  .tarjetas { gap: 2.2rem; }
+  .seccion-trabajos { margin-bottom: 5rem; }
+  .seccion-trabajos h2 { margin-bottom: 2.2rem; }
+  .trabajos { gap: 2.4rem; }
+  .trabajo { padding: 1.1rem; gap: 1rem; }
+  .catalogo-intro { margin-bottom: 3rem; }
+  .titulo-centrado { margin-bottom: 2.8rem; }
+  .pie { padding-top: 2.4rem; padding-bottom: 1.2rem; }
+}
