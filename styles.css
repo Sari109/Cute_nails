@@ -398,3 +398,190 @@ main {
   .titulo-centrado { margin-bottom: 2.8rem; }
   .pie { padding-top: 2.4rem; padding-bottom: 1.2rem; }
 }
+
+/* ===== Reseñas y formularios ===== */
+.banner-resenas {
+  background-image: linear-gradient(135deg, var(--morado-medio), var(--rosa));
+}
+
+.resenas-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.resenas-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.resenas-intro p {
+  font-size: 1.08rem;
+}
+
+.resenas-consejos {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: .8rem;
+}
+
+.resenas-consejos li {
+  display: flex;
+  gap: .7rem;
+  align-items: flex-start;
+}
+
+.resenas-consejos i {
+  color: var(--rosa);
+  margin-top: .3rem;
+}
+
+.formulario {
+  background: var(--lila-tarjeta);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: var(--sombra);
+  display: grid;
+  gap: 1.3rem;
+}
+
+.campo {
+  display: grid;
+  gap: .4rem;
+}
+
+.campos-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem;
+}
+
+.campo label {
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: .75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--morado-oscuro);
+  font: inherit;
+}
+
+.campo input,
+.campo select {
+  min-height: 3.2rem;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--morado-medio);
+}
+
+.campo input:user-invalid,
+.campo select:user-invalid,
+.campo textarea:user-invalid {
+  border-color: #c0392b;
+}
+
+.campo input:user-valid,
+.campo select:user-valid,
+.campo textarea:user-valid {
+  border-color: #2e9e5b;
+}
+
+.ayuda {
+  font-size: .85rem;
+  color: var(--morado-medio);
+}
+
+.campo-check {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: .7rem;
+}
+
+.campo-check input {
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  accent-color: var(--rosa);
+}
+
+.campo-check label {
+  font-weight: 400;
+}
+
+.formulario .boton {
+  justify-self: start;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.opiniones-vacio {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: var(--lila-tarjeta);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+}
+
+.opiniones-vacio i {
+  font-size: 2rem;
+  color: var(--rosa);
+  margin-bottom: .8rem;
+}
+
+@media (max-width: 900px) {
+  .resenas-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .campos-fila {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario {
+    padding: 1.4rem;
+  }
+
+  .formulario .boton {
+    justify-self: stretch;
+    text-align: center;
+  }
+}
+
+/* ===== Arreglo: icono del botón flotante de WhatsApp ===== */
+.flotante-whatsapp i,
+.flotante-subir i {
+  display: block;
+  color: #fff;
+  line-height: 1;
+}
+
+.flotante-whatsapp i {
+  font-size: 1.8rem;
+}
+
+@media (max-width: 480px) {
+  .flotante-whatsapp i {
+    font-size: 1.6rem;
+  }
+}

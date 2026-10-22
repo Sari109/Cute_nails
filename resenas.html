@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cuéntanos tu experiencia con Cute Nails y lee las opiniones de nuestras clientas y clientes.">
+  <title>Reseñas | Cute Nails</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+  <header class="cabecera">
+    <div class="cabecera-interior">
+      <a href="index.html" class="marca" aria-label="Cute Nails, ir al inicio">
+        <span class="marca-logo">CN</span>
+        <span class="marca-nombre">Cute Nails</span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-check" aria-label="Abrir o cerrar el menú">
+      <label for="menu-toggle" class="hamburguesa" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="portafolio.html">Portafolio</a></li>
+          <li><a href="resenas.html" aria-current="page">Reseñas</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="banner banner-pagina banner-resenas">
+      <div class="banner-texto">
+        <h1>Reseñas</h1>
+        <p>Tu opinión nos ayuda a mejorar</p>
+      </div>
+    </header>
+
+    <section class="resenas-layout" aria-labelledby="titulo-resena">
+      <div class="resenas-intro">
+        <h2 id="titulo-resena">Cuéntanos tu experiencia</h2>
+        <p>Si ya te atendimos, nos encantaría saber cómo te fue. Tu comentario ayuda a otras personas a elegir su técnica con más confianza.</p>
+        <ul class="resenas-consejos">
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Dinos qué técnica te hiciste.</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Califica tu experiencia de 1 a 5.</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Cuéntanos qué te gustó y qué podemos mejorar.</li>
+        </ul>
+      </div>
+
+      <form class="formulario" action="resenas.html" method="get">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required
+                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{3,40}"
+                 title="Entre 3 y 40 letras, sin números ni símbolos">
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+
+        <div class="campos-fila">
+          <div class="campo">
+            <label for="servicio">Técnica que te hiciste</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Elige una técnica</option>
+              <option value="press-on">Press on</option>
+              <option value="base-rubber">Base Rubber</option>
+              <option value="acrilicas-tips">Acrílicas tips</option>
+              <option value="dipping">Dipping</option>
+              <option value="acrilicas-esculpidas">Acrílicas esculpidas</option>
+              <option value="polygel">Polygel</option>
+              <option value="semipermanente">Semipermanente</option>
+              <option value="tradicional">Tradicional</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="fecha">Fecha del servicio</label>
+            <input type="date" id="fecha" name="fecha" required min="2025-01-01" max="2026-12-31">
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="calificacion">Calificación (de 1 a 5)</label>
+          <input type="number" id="calificacion" name="calificacion" min="1" max="5" step="1" placeholder="5" required>
+        </div>
+
+        <div class="campo">
+          <label for="comentario">Tu comentario</label>
+          <textarea id="comentario" name="comentario" rows="5" placeholder="Cuéntanos cómo te fue" required minlength="20" maxlength="500"></textarea>
+          <p class="ayuda">Entre 20 y 500 caracteres.</p>
+        </div>
+
+        <div class="campo campo-check">
+          <input type="checkbox" id="acepto" name="acepto" required>
+          <label for="acepto">Acepto que mi reseña se publique en la página.</label>
+        </div>
+
+        <button class="boton boton-grande" type="submit">Enviar reseña</button>
+      </form>
+    </section>
+
+    <section class="opiniones seccion" aria-labelledby="titulo-opiniones">
+      <h2 id="titulo-opiniones" class="titulo-centrado">Opiniones de nuestras clientas y clientes</h2>
+      <div class="opiniones-vacio">
+        <i class="fa-regular fa-comments" aria-hidden="true"></i>
+        <p>Aún no hay reseñas publicadas. ¡Sé la primera persona en opinar!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie-contenido">
+      <section class="pie-marca">
+        <h2>Cute Nails</h2>
+        <p>Cuidamos tus uñas desde la comodidad de tu casa.</p>
+      </section>
+
+      <nav aria-label="Técnicas destacadas">
+        <h2>Técnicas</h2>
+        <ul>
+          <li><a href="detalle-press-on.html">Press on</a></li>
+          <li><a href="detalle-base-rubber.html">Base Rubber</a></li>
+          <li><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></li>
+          <li><a href="detalle-semipermanente.html">Semipermanente</a></li>
+        </ul>
+      </nav>
+
+      <section>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="https://wa.me/573147051152"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 314 705 1152</a></li>
+          <li><a href="https://instagram.com/cutenails_0121"><i class="fa-brands fa-instagram" aria-hidden="true"></i> cutenails_0121</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba · Lunes a sábado</li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="derechos">© 2026 Cute Nails. Todos los derechos reservados.</p>
+  </footer>
+
+    <div class="flotantes">
+    <a class="flotante flotante-subir" href="#top" aria-label="Volver arriba">
+      <i class="fa-solid fa-angles-up" aria-hidden="true"></i>
+    </a>
+    <a class="flotante flotante-whatsapp" href="https://wa.me/573147051152" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+  </div>
+
+</body>
+</html>
