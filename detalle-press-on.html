@@ -14,19 +14,30 @@
 </head>
 <body id="top">
 
-  <aside class="barra-lateral">
-    <a href="index.html" class="logo" aria-label="Cute Nails, ir al inicio">CN</a>
-    <nav aria-label="Menú principal">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
-        <li><a href="portafolio.html">Portafolio</a></li>
-        <li><a href="resenas.html">Reseñas</a></li>
-        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </aside>
+  <header class="cabecera">
+    <div class="cabecera-interior">
+      <a href="index.html" class="marca" aria-label="Cute Nails, ir al inicio">
+        <span class="marca-logo">CN</span>
+        <span class="marca-nombre">Cute Nails</span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-check" aria-label="Abrir o cerrar el menú">
+      <label for="menu-toggle" class="hamburguesa" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
+          <li><a href="portafolio.html">Portafolio</a></li>
+          <li><a href="resenas.html">Reseñas</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <nav class="migas" aria-label="Ruta de navegación">
@@ -61,6 +72,10 @@
           <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
           Vamos a tu casa en Sahagún, Córdoba. Atendemos de lunes a sábado.
         </p>
+
+        <a class="boton boton-grande" href="https://wa.me/573147051152?text=Hola%2C%20quiero%20agendar%20una%20cita%20para%20Press%20on" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar Press on por WhatsApp
+        </a>
       </div>
     </article>
 
@@ -99,36 +114,31 @@
   </main>
 
   <footer class="pie">
-    <section class="pie-marca">
-      <h2>Cute Nails</h2>
-      <p>Cuidamos tus uñas desde la comodidad de tu casa.</p>
-    </section>
+    <div class="pie-contenido">
+      <section class="pie-marca">
+        <h2>Cute Nails</h2>
+        <p>Cuidamos tus uñas desde la comodidad de tu casa.</p>
+      </section>
 
-    <nav aria-label="Técnicas destacadas">
-      <h2>Técnicas</h2>
-      <ul>
-        <li><a href="detalle-press-on.html">Press on</a></li>
-        <li><a href="detalle-base-rubber.html">Base Rubber</a></li>
-        <li><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></li>
-        <li><a href="detalle-semipermanente.html">Semipermanente</a></li>
-      </ul>
-    </nav>
+      <nav aria-label="Técnicas destacadas">
+        <h2>Técnicas</h2>
+        <ul>
+          <li><a href="detalle-press-on.html">Press on</a></li>
+          <li><a href="detalle-base-rubber.html">Base Rubber</a></li>
+          <li><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></li>
+          <li><a href="detalle-semipermanente.html">Semipermanente</a></li>
+        </ul>
+      </nav>
 
-    <section>
-      <h2>Escríbenos</h2>
-      <ul>
-        <li><a href="https://wa.me/573147051152"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 314 705 1152</a></li>
-        <li><a href="https://instagram.com/cutenails_0121"><i class="fa-brands fa-instagram" aria-hidden="true"></i> cutenails_0121</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Atención</h2>
-      <ul>
-        <li><i class="fa-regular fa-clock" aria-hidden="true"></i> Lunes a sábado</li>
-        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="https://wa.me/573147051152"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 314 705 1152</a></li>
+          <li><a href="https://instagram.com/cutenails_0121"><i class="fa-brands fa-instagram" aria-hidden="true"></i> cutenails_0121</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba · Lunes a sábado</li>
+        </ul>
+      </section>
+    </div>
 
     <p class="derechos">© 2026 Cute Nails. Todos los derechos reservados.</p>
   </footer>

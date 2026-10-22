@@ -225,6 +225,7 @@ main {
 .recomendaciones ul { list-style: disc; padding-left: 1.3rem; }
 .recomendaciones li { margin-bottom: .35rem; }
 .nota-agendar { background: var(--lila-claro); border-left: 4px solid var(--rosa); padding: .9rem 1.1rem; border-radius: 10px; margin-top: 1.2rem; }
+.detalle-info .boton { margin-top: 1.5rem; }
 .detalle + .tecnicas { margin-top: 4.5rem; }
 
 /* ===== Portafolio ===== */
