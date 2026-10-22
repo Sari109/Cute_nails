@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Contáctanos para agendar tu cita de uñas a domicilio en Sahagún, Córdoba. Escríbenos por WhatsApp o envíanos tu mensaje.">
+  <title>Contacto | Cute Nails</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="top">
+
+  <header class="cabecera">
+    <div class="cabecera-interior">
+      <a href="index.html" class="marca" aria-label="Cute Nails, ir al inicio">
+        <span class="marca-logo">CN</span>
+        <span class="marca-nombre">Cute Nails</span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-check" aria-label="Abrir o cerrar el menú">
+      <label for="menu-toggle" class="hamburguesa" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="portafolio.html">Portafolio</a></li>
+          <li><a href="resenas.html">Reseñas</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="banner banner-pagina banner-contacto">
+      <div class="banner-texto">
+        <h1>Contáctanos</h1>
+        <p>Estamos listas para consentir tus manos y pies</p>
+      </div>
+    </header>
+
+    <section class="contacto-layout" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto" class="solo-lectores">Formulario y canales de contacto</h2>
+
+      <!-- Columna 1: Formulario con validaciones nativas -->
+      <form class="formulario" action="contacto.html" method="get">
+        <h3 class="contacto-subtitulo">Envíanos un mensaje</h3>
+
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{3,50}" title="Ingresa entre 3 y 50 letras, sin números">
+        </div>
+
+        <div class="campos-fila">
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+
+          <div class="campo">
+            <label for="telefono">Teléfono celular</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3147051152" required pattern="[0-9]{10}"
+              title="Ingresa tu número de celular de 10 dígitos">
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="servicio">Servicio de interés</label>
+          <select id="servicio" name="servicio" required>
+            <option value="">Selecciona una técnica</option>
+            <option value="press-on">Press on ($50.000)</option>
+            <option value="base-rubber">Base Rubber ($45.000)</option>
+            <option value="acrilicas-tips">Acrílicas tips ($55.000)</option>
+            <option value="acrilicas-esculpidas">Acrílicas esculpidas ($60.000)</option>
+            <option value="dipping">Dipping ($45.000)</option>
+            <option value="polygel">Polygel ($50.000)</option>
+            <option value="semipermanente">Semipermanente ($30.000)</option>
+            <option value="tradicional">Tradicional / Pedicura ($15.000)</option>
+            <option value="consulta-general">Solo quiero hacer una consulta</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">¿En qué te podemos colaborar?</label>
+          <textarea id="mensaje" name="mensaje" rows="4"
+            placeholder="Cuéntanos cuándo te gustaría agendar o qué diseño tienes en mente" required minlength="10"
+            maxlength="500"></textarea>
+          <p class="ayuda">Entre 10 y 500 caracteres.</p>
+        </div>
+
+        <button class="boton boton-grande" type="submit">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar mensaje
+        </button>
+      </form>
+
+      <!-- Columna 2: Información directa y canales de atención -->
+      <aside class="contacto-info" aria-label="Información del negocio">
+        <article class="contacto-tarjeta">
+          <h3>Escríbenos directamente</h3>
+          <div class="contacto-enlaces">
+            <a class="contacto-canal"
+              href="https://wa.me/573147051152?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio" target="_blank"
+              rel="noopener">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <div>
+                <strong>WhatsApp (Respuesta rápida)</strong>
+                <p>314 705 1152</p>
+              </div>
+            </a>
+
+            <a class="contacto-canal" href="https://instagram.com/cutenails_0121" target="_blank" rel="noopener">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              <div>
+                <strong>Instagram</strong>
+                <p>@cutenails_0121</p>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="contacto-tarjeta">
+          <h3>Horarios y cobertura</h3>
+          <ul class="info-lista">
+            <li>
+              <i class="fa-regular fa-clock" aria-hidden="true"></i>
+              <div>
+                <strong>Lunes a sábado</strong>
+                <p>7:00 a.m. – 12:00 m. y 1:00 p.m. – 10:00 p.m.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <div>
+                <strong>Servicio a domicilio</strong>
+                <p>Vamos hasta tu casa en Sahagún, Córdoba.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="contacto-tarjeta">
+          <h3>Métodos de pago recibidos</h3>
+          <p>Pagas cómodamente al finalizar tu servicio:</p>
+          <div class="pagos-etiquetas">
+            <span class="pago-etiqueta"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> Efectivo</span>
+            <span class="pago-etiqueta"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Nequi</span>
+            <span class="pago-etiqueta"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Daviplata</span>
+          </div>
+        </article>
+      </aside>
+    </section>
+
+    <!-- Sección de Preguntas Frecuentes antes de agendar -->
+    <section class="seccion" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq" class="titulo-centrado">Preguntas frecuentes antes de agendar</h2>
+
+      <div class="faq-lista">
+        <details class="faq-item">
+          <summary>¿Con cuánta anticipación debo solicitar mi cita?</summary>
+          <p>Recomendamos solicitarla con al menos 1 o 2 días de anticipación para asegurar el día y la hora que mejor
+            te convenga.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Qué debo tener listo en mi casa para el servicio a domicilio?</summary>
+          <p>Solo necesitas una mesa firme, dos sillas y un espacio con buena iluminación natural o eléctrica. Nosotros
+            llevamos todos los productos, lámparas y herramientas debidamente esterilizadas.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Puedo pedir un diseño personalizado que vi en internet?</summary>
+          <p>¡Claro que sí! Puedes enviarnos la fotografía de referencia por WhatsApp al momento de agendar para
+            confirmarte la técnica recomendada y el valor exacto.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie-contenido">
+      <section class="pie-marca">
+        <h2>Cute Nails</h2>
+        <p>Cuidamos tus uñas desde la comodidad de tu casa.</p>
+      </section>
+
+      <nav aria-label="Técnicas destacadas">
+        <h2>Técnicas</h2>
+        <ul>
+          <li><a href="detalle-press-on.html">Press on</a></li>
+          <li><a href="detalle-base-rubber.html">Base Rubber</a></li>
+          <li><a href="detalle-acrilicas-tips.html">Acrílicas tips</a></li>
+          <li><a href="detalle-semipermanente.html">Semipermanente</a></li>
+        </ul>
+      </nav>
+
+      <section>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="https://wa.me/573147051152"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 314 705
+              1152</a></li>
+          <li><a href="https://instagram.com/cutenails_0121"><i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              cutenails_0121</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba · Lunes a sábado</li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="derechos">© 2026 Cute Nails. Todos los derechos reservados.</p>
+  </footer>
+
+  <div class="flotantes">
+    <a class="flotante flotante-subir" href="#top" aria-label="Volver arriba">
+      <i class="fa-solid fa-angles-up" aria-hidden="true"></i>
+    </a>
+    <a class="flotante flotante-whatsapp" href="https://wa.me/573147051152" target="_blank" rel="noopener"
+      aria-label="Escríbenos por WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+  </div>
+
+</body>
+
+</html>
