@@ -1,26 +1,6 @@
-/* ==========================================================
-   CUTE NAILS - Hoja de estilos principal
-   Organizacion:
-   1.  Variables y base global
-   2.  Cabecera y navegacion
-   3.  Pie de pagina y botones flotantes
-   4.  Botones y utilidades compartidas
-   5.  Banners (compartidos entre paginas)
-   6.  INICIO (index.html)
-   7.  CATALOGO (catalogo.html)
-   8.  PORTAFOLIO (portafolio.html)
-   9.  RESENAS (resenas.html)
-   10. SOBRE NOSOTROS (sobre-nosotros.html)
-   11. CONTACTO (contacto.html)
-   12. DETALLE DE TECNICA (detalle-*.html)
-   13. RESPONSIVE - media queries
-   ========================================================== */
+/* Estilos principales de Cute Nails */
 
-
-/* ==========================================================
-   1. VARIABLES Y BASE GLOBAL
-   ========================================================== */
-
+/* Variables de color y tipografía */
 :root {
   --morado-oscuro: #4a3560;
   --morado-medio: #7a5a9e;
@@ -39,6 +19,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  
 }
 
 html {
@@ -120,10 +101,7 @@ main {
 }
 
 
-/* ==========================================================
-   2. CABECERA Y NAVEGACION
-   ========================================================== */
-
+/* Barra de navegación y menú superior */
 .cabecera {
   grid-area: cabecera;
   position: sticky;
@@ -204,10 +182,7 @@ main {
 }
 
 
-/* ==========================================================
-   3. PIE DE PAGINA Y BOTONES FLOTANTES
-   ========================================================== */
-
+/* Pie de página y botones flotantes */
 .pie {
   grid-area: pie;
   background: linear-gradient(135deg, #8765ab, var(--morado-pie));
@@ -313,10 +288,7 @@ main {
 }
 
 
-/* ==========================================================
-   4. BOTONES Y UTILIDADES COMPARTIDAS
-   ========================================================== */
-
+/* Botones y estilos compartidos */
 .boton {
   display: inline-block;
   padding: .6rem 1.4rem;
@@ -376,10 +348,7 @@ main {
 }
 
 
-/* ==========================================================
-   5. BANNERS DE PAGINA (compartidos)
-   ========================================================== */
-
+/* Banners de cada página */
 .banner {
   position: relative;
   border-radius: 22px;
@@ -413,11 +382,9 @@ main {
 }
 
 
-/* ==========================================================
-   6. INICIO (index.html)
-   ========================================================== */
+/* Página de Inicio (index.html) */
 
-/* --- Hero principal --- */
+/* Hero principal */
 .hero {
   position: relative;
   border-radius: 26px;
@@ -426,7 +393,7 @@ main {
   display: flex;
   align-items: center;
   background-image: linear-gradient(90deg,
-      rgba(74, 53, 96, .82) 0%,
+      rgba(97, 11, 190, 0.82) 0%,
       rgba(74, 53, 96, .55) 55%,
       rgba(74, 53, 96, .25) 100%),
     url("img/banner_inicio.png");
@@ -467,7 +434,7 @@ main {
   margin-top: 1.5rem;
 }
 
-/* --- Beneficios ("Por que elegirnos") --- */
+/* Beneficios del servicio */
 .beneficios {
   margin-top: 3rem;
 }
@@ -504,7 +471,7 @@ main {
   margin-bottom: .3rem;
 }
 
-/* --- Tarjetas de tecnicas (inicio y catalogo) --- */
+/* Tarjetas de las técnicas */
 .tecnicas-encabezado {
   display: flex;
   justify-content: space-between;
@@ -580,7 +547,7 @@ main {
   font-size: 1.15rem;
 }
 
-/* --- Pasos ("Como funciona?") --- */
+/* Pasos para agendar */
 .pasos-lista {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -612,7 +579,7 @@ main {
   margin-bottom: .3rem;
 }
 
-/* --- Galeria de muestra de trabajos --- */
+/* Galería de muestra */
 .muestra-galeria {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -627,7 +594,7 @@ main {
   box-shadow: var(--sombra);
 }
 
-/* --- Llamado a la accion final --- */
+/* Mensaje para invitar a agendar */
 .llamado {
   text-align: center;
   color: #fff;
@@ -646,7 +613,7 @@ main {
   margin-bottom: 1.6rem;
 }
 
-/* --- Preguntas frecuentes (FAQ) --- */
+/* Preguntas frecuentes */
 .faq-lista {
   display: grid;
   gap: .8rem;
@@ -691,7 +658,7 @@ main {
   padding-bottom: 1.2rem;
 }
 
-/* --- Cinta continua infinita estilo Instagram (Galería de trabajos) --- */
+/* Galería en carrusel */
 .subtitulo-elegante {
   color: var(--rosa);
   font-weight: 700;
@@ -839,11 +806,9 @@ main {
 }
 
 
-/* ==========================================================
-   7. CATALOGO (catalogo.html)
-   ========================================================== */
+/* Catálogo (catalogo.html) */
 
-/* --- Banner --- */
+/* Banner */
 .banner-catalogo {
   background-image: linear-gradient(rgba(255, 255, 255, .25), rgba(255, 255, 255, .25)), url("img/banner_catalogo.png");
 }
@@ -860,7 +825,7 @@ main {
   letter-spacing: .08em;
 }
 
-/* --- Intro y duracion --- */
+/* Texto de introducción y duración */
 .catalogo-intro {
   text-align: center;
   max-width: 640px;
@@ -878,7 +843,123 @@ main {
   margin-bottom: .5rem;
 }
 
-/* --- Tabla comparativa --- */
+/* Buscador de técnicas */
+.catalogo-herramientas {
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+}
+
+.buscador-contenedor {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.buscador-contenedor i {
+  position: absolute;
+  left: 1.2rem;
+  color: var(--rosa);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.buscador-input {
+  width: 100%;
+  padding: .85rem 1.2rem .85rem 3rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background: #ffffff;
+  color: var(--morado-oscuro);
+  font: inherit;
+  font-size: 1rem;
+  box-shadow: var(--sombra);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.buscador-input:focus {
+  outline: none;
+  border-color: var(--morado-medio);
+  box-shadow: 0 4px 18px rgba(74, 53, 96, .15);
+}
+
+/* Animación de carga (spinner) */
+.loader-contenedor {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  color: var(--morado-medio);
+  font-weight: 700;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--lila-tarjeta);
+  border-top-color: var(--rosa);
+  border-radius: 50%;
+  animation: girarSpinner 0.8s linear infinite;
+}
+
+@keyframes girarSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tarjeta de error si falla la carga */
+.error-carga-servicios {
+  grid-column: 1 / -1;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--sombra);
+  max-width: 520px;
+  margin: 1rem auto;
+}
+
+.error-carga-servicios i {
+  font-size: 2.5rem;
+  color: #c0392b;
+  margin-bottom: .8rem;
+}
+
+.error-carga-servicios h3 {
+  color: var(--morado-oscuro);
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+}
+
+.error-carga-servicios p {
+  color: var(--morado-medio);
+  font-size: .95rem;
+  margin-bottom: 1.3rem;
+}
+
+/* Mensaje cuando la búsqueda no da resultados */
+.filtro-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+  color: var(--morado-medio);
+}
+
+.filtro-vacio i {
+  font-size: 2.2rem;
+  color: var(--rosa);
+  margin-bottom: .8rem;
+  display: block;
+}
+
+/* Tabla de comparación */
 .tabla-contenedor {
   overflow-x: auto;
   border-radius: 18px;
@@ -929,11 +1010,9 @@ main {
 }
 
 
-/* ==========================================================
-   8. PORTAFOLIO (portafolio.html)
-   ========================================================== */
+/* Portafolio (portafolio.html) */
 
-/* --- Banner --- */
+/* Banner */
 .banner-portafolio {
   align-items: flex-end;
   justify-content: flex-end;
@@ -952,7 +1031,7 @@ main {
   font-size: 1.3rem;
 }
 
-/* --- Secciones de trabajos --- */
+/* Sección de trabajos */
 .seccion-trabajos {
   margin-bottom: 3.5rem;
 }
@@ -972,7 +1051,7 @@ main {
   margin-top: .5rem;
 }
 
-/* --- Cuadricula de pares antes/despues --- */
+/* Fotos de antes y después */
 .trabajos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -1020,7 +1099,7 @@ main {
   color: #fff;
 }
 
-/* --- Galería de Diseños por Técnica (Portafolio) --- */
+/* Diseños clasificados por técnica */
 .seccion-disenos {
   margin-top: 4rem;
 }
@@ -1121,16 +1200,14 @@ main {
 }
 
 
-/* ==========================================================
-   9. RESENAS (resenas.html)
-   ========================================================== */
+/* Reseñas (resenas.html) */
 
-/* --- Banner --- */
+/* Banner */
 .banner-resenas {
   background-image: linear-gradient(135deg, var(--morado-medio), var(--rosa));
 }
 
-/* --- Layout intro + formulario --- */
+/* Distribución de la sección de reseñas */
 .resenas-layout {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -1164,7 +1241,7 @@ main {
   margin-top: .3rem;
 }
 
-/* --- Formulario (compartido con contacto.html) --- */
+/* Estilos generales del formulario */
 .formulario {
   background: var(--lila-tarjeta);
   border-radius: 24px;
@@ -1220,14 +1297,82 @@ main {
 
 .campo input:user-invalid,
 .campo select:user-invalid,
-.campo textarea:user-invalid {
+.campo textarea:user-invalid,
+.campo input.invalido,
+.campo select.invalido,
+.campo textarea.invalido {
   border-color: #c0392b;
+  background-color: #fff9f9;
 }
 
 .campo input:user-valid,
 .campo select:user-valid,
-.campo textarea:user-valid {
+.campo textarea:user-valid,
+.campo input.valido,
+.campo select.valido,
+.campo textarea.valido {
   border-color: #2e9e5b;
+  background-color: #f7fdf9;
+}
+
+.mensaje-error {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .82rem;
+  color: #c0392b;
+  font-weight: 600;
+  margin-top: .2rem;
+  animation: aparecerError .25s ease-in-out;
+}
+
+.mensaje-error i {
+  font-size: .85rem;
+}
+
+.alerta-formulario {
+  padding: .9rem 1.2rem;
+  border-radius: 12px;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-top: .5rem;
+  animation: aparecerAlerta .3s ease-in-out;
+}
+
+.alerta-formulario.exito {
+  background-color: #eaf8ef;
+  color: #1e7e44;
+  border: 1px solid #b7ebd0;
+}
+
+.alerta-formulario.error {
+  background-color: #fdf0ed;
+  color: #c0392b;
+  border: 1px solid #f5c2bb;
+}
+
+@keyframes aparecerError {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecerAlerta {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .ayuda {
@@ -1258,7 +1403,7 @@ main {
   font-family: inherit;
 }
 
-/* --- Estado vacio de opiniones --- */
+/* Mensaje cuando no hay opiniones */
 .opiniones-vacio {
   max-width: 560px;
   margin: 0 auto;
@@ -1275,17 +1420,147 @@ main {
   margin-bottom: .8rem;
 }
 
+/* Tarjetas de las opiniones */
+.opiniones-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
 
-/* ==========================================================
-   10. SOBRE NOSOTROS (sobre-nosotros.html)
-   ========================================================== */
+.tarjeta-resena {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.6rem;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+  border: 1px solid rgba(224, 86, 157, .12);
+  animation: aparecerResena .3s ease-out;
+}
 
-/* --- Banner --- */
+.tarjeta-resena:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(74, 53, 96, .12);
+}
+
+.resena-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .8rem;
+  flex-wrap: wrap;
+}
+
+.resena-autor-grupo {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.resena-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--morado-medio), var(--rosa));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.resena-autor {
+  font-size: 1.05rem;
+  color: var(--morado-oscuro);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.resena-tecnica {
+  font-size: .82rem;
+  color: var(--rosa);
+  font-weight: 700;
+  display: inline-block;
+  margin-top: .2rem;
+}
+
+.resena-estrellas {
+  color: #f5a623;
+  font-size: .95rem;
+  display: flex;
+  gap: .15rem;
+}
+
+.resena-comentario {
+  font-size: .95rem;
+  line-height: 1.55;
+  color: var(--morado-oscuro);
+  flex-grow: 1;
+  margin: 0;
+}
+
+.resena-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f3e9f7;
+  padding-top: .8rem;
+  margin-top: auto;
+}
+
+.resena-fecha {
+  font-size: .82rem;
+  color: var(--morado-medio);
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.boton-eliminar-resena {
+  background: transparent;
+  border: none;
+  color: #c0392b;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .35rem .65rem;
+  border-radius: 8px;
+  transition: background-color .2s ease;
+  font-family: inherit;
+}
+
+.boton-eliminar-resena:hover {
+  background-color: #fdf0ed;
+}
+
+@keyframes aparecerResena {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Sobre Nosotros (sobre-nosotros.html) */
+
+/* Banner */
 .banner-nosotros {
   background-image: linear-gradient(rgba(74, 53, 96, .55), rgba(74, 53, 96, .55)), url("img/banner_sobre_nosotros.png");
 }
 
-/* --- Quienes somos --- */
+/* Quiénes somos */
 .nosotros-quienes {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -1329,7 +1604,7 @@ main {
   border: 4px solid var(--rosa);
 }
 
-/* --- Pilares de servicio --- */
+/* Pilares y valores */
 .pilares-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1368,7 +1643,7 @@ main {
   color: var(--morado-oscuro);
 }
 
-/* --- CTA final --- */
+/* Botón de llamado final */
 .nosotros-cta {
   text-align: center;
 }
@@ -1395,16 +1670,14 @@ main {
 }
 
 
-/* ==========================================================
-   11. CONTACTO (contacto.html)
-   ========================================================== */
+/* Contacto (contacto.html) */
 
-/* --- Banner --- */
+/* Banner */
 .banner-contacto {
   background-image: linear-gradient(rgba(74, 53, 96, .65), rgba(74, 53, 96, .65)), url("img/banner_contacto.png");
 }
 
-/* --- Layout formulario + info --- */
+/* Distribución de la página de contacto */
 .contacto-layout {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
@@ -1435,7 +1708,7 @@ main {
   margin-bottom: .8rem;
 }
 
-/* --- Canales (WhatsApp / Instagram) --- */
+/* Enlaces directos a redes y chat */
 .contacto-enlaces {
   display: flex;
   flex-direction: column;
@@ -1471,7 +1744,7 @@ main {
   color: var(--rosa);
 }
 
-/* --- Lista de info (horarios, ubicacion) --- */
+/* Horarios y cobertura */
 .info-lista {
   display: grid;
   gap: 1rem;
@@ -1489,7 +1762,7 @@ main {
   margin-top: .2rem;
 }
 
-/* --- Metodos de pago --- */
+/* Métodos de pago */
 .pagos-etiquetas {
   display: flex;
   flex-wrap: wrap;
@@ -1515,11 +1788,9 @@ main {
 }
 
 
-/* ==========================================================
-   12. DETALLE DE TECNICA (detalle-*.html)
-   ========================================================== */
+/* Detalle de técnica (detalle.html) */
 
-/* --- Migas de pan --- */
+/* Migas de pan */
 .migas {
   display: flex;
   flex-wrap: wrap;
@@ -1543,7 +1814,7 @@ main {
   font-size: .7rem;
 }
 
-/* --- Layout foto + info --- */
+/* Tarjeta de detalle */
 .detalle {
   display: grid;
   grid-template-columns: .9fr 1.1fr;
@@ -1627,11 +1898,9 @@ main {
 }
 
 
-/* ==========================================================
-   13. RESPONSIVE - Media queries
-   ========================================================== */
+/* Adaptación a diferentes pantallas (Responsive) */
 
-/* ---- Escritorio grande: min-width 769px ---- */
+/* Pantallas grandes y escritorio (desde 769px) */
 @media (min-width: 769px) {
   .menu {
     margin: 0 0 0 auto;
@@ -1689,7 +1958,7 @@ main {
   }
 }
 
-/* ---- Tablet: hasta 1024px ---- */
+/* Pantallas medianas y tablets (hasta 1024px) */
 @media (max-width: 1024px) {
   .cabecera-interior {
     padding: .8rem 1.5rem;
@@ -1731,7 +2000,7 @@ main {
   }
 }
 
-/* ---- Tablet media: hasta 900px (resenas y contacto) ---- */
+/* Pantallas hasta 900px (reseñas y contacto) */
 @media (max-width: 900px) {
   .resenas-layout {
     grid-template-columns: 1fr;
@@ -1744,7 +2013,7 @@ main {
   }
 }
 
-/* ---- Movil: hasta 768px (menu hamburguesa) ---- */
+/* Celulares y menú hamburguesa (hasta 768px) */
 @media (max-width: 768px) {
 
   /* Cabecera */
@@ -2013,7 +2282,7 @@ main {
   }
 }
 
-/* ---- Formularios en pantalla pequena: hasta 560px ---- */
+/* Formularios en celulares pequeños (hasta 560px) */
 @media (max-width: 560px) {
   .campos-fila {
     grid-template-columns: 1fr;
@@ -2029,7 +2298,7 @@ main {
   }
 }
 
-/* ---- Movil pequeno: hasta 480px ---- */
+/* Celulares compactos (hasta 480px) */
 @media (max-width: 480px) {
   .marca-nombre {
     font-size: 1.15rem;
